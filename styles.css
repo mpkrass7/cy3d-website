@@ -219,6 +219,12 @@
   .deck-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem; }
   @media (max-width: 760px) { .deck-gallery { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 440px) { .deck-gallery { grid-template-columns: 1fr; } }
+  /* masonry gallery for mixed-shape photos (renovation collages) */
+  .reno-gallery { columns: 3; column-gap: .9rem; }
+  @media (max-width: 900px) { .reno-gallery { columns: 2; } }
+  @media (max-width: 560px) { .reno-gallery { columns: 1; } }
+  .reno-gallery .photo { break-inside: avoid; margin: 0 0 .9rem; aspect-ratio: auto; display: block; }
+  .reno-gallery .photo img { height: auto; }
 
   /* ---------- process ---------- */
   .process { background: var(--surface); border-block: 1px solid var(--line); }

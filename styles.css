@@ -187,6 +187,11 @@
   .svc p { color: var(--ink-soft); font-size: .97rem; }
   .svc .arrow { margin-top: auto; font-family: var(--sans); font-weight: 700; text-transform: uppercase; font-size: .72rem; letter-spacing: .1em; color: var(--ink); opacity: .0; transform: translateX(-4px); transition: .18s ease; }
   .svc:hover .arrow { opacity: 1; transform: translateX(0); }
+  /* clickable service card (Decks) — always shows its link */
+  a.svc-link { text-decoration: none; color: inherit; }
+  a.svc-link .arrow { opacity: 1; transform: none; color: var(--accent-ink); }
+  a.svc-link::after { content: ""; position: absolute; inset: 0; }
+  a.svc-link:hover .arrow { transform: translateX(3px); }
 
   /* ---------- before / after project ---------- */
   .project + .project { margin-top: clamp(2.5rem, 5vw, 4rem); }
@@ -205,6 +210,15 @@
   @media (prefers-reduced-motion: reduce) { .photo:hover img { transform: none; } }
   .photo .tag { position: absolute; top: 10px; left: 10px; font-family: var(--mono); font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; padding: 3px 7px; border-radius: 3px; background: var(--steel); color: #fff; }
   .photo .tag.is-after { background: var(--accent); color: var(--on-accent); }
+
+  /* ---------- deck portfolio page ---------- */
+  .proj-no { font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; color: var(--accent-ink); margin-right: .6rem; }
+  .deck-jump { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 2.2rem; }
+  .deck-jump a { font-family: var(--mono); font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; border: 1px solid var(--line); padding: .5em .75em; border-radius: 4px; transition: border-color .18s ease, color .18s ease; }
+  .deck-jump a:hover { border-color: var(--accent); color: var(--accent-ink); }
+  .deck-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem; }
+  @media (max-width: 760px) { .deck-gallery { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 440px) { .deck-gallery { grid-template-columns: 1fr; } }
 
   /* ---------- process ---------- */
   .process { background: var(--surface); border-block: 1px solid var(--line); }
